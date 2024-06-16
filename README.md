@@ -8,7 +8,7 @@ Additionally we include the PCB Designs and schematics used for the hardware exp
 
 
 ![motivation](figures/motivation.jpg)
-![accuracy](figures/accuracy.jpg)
+![accuracy](figures/accuracy.png)
 
 ## Code Structure
 We provide a MATLAB implementation and python implementation of the proposed algorithm. Furthermore the scripts that were run on the UR5 and arduino to collect the data are included for reference.
