@@ -336,18 +336,14 @@ def getRMSE(true, traj):
 
 if __name__ == '__main__':
     ekf = RobobeeEKF()
-    ekf.updatedtype(32, 32)
-    data = np.genfromtxt("golden.csv", delimiter=",")[1:, :]
-    estimated_trajectory = getEstimatedTrajectory(ekf, data)
-    true_trajectory, time = getGroundTruth(data)
-    RMSE64 = getRMSE(true_trajectory, estimated_trajectory)
-
-    ekf = RobobeeEKF()
     ekf.updatedtype(16, 16)
     data = np.genfromtxt("golden.csv", delimiter=",")[1:, :]
     estimated_trajectory = getEstimatedTrajectory(ekf, data)
     true_trajectory, time = getGroundTruth(data)
     RMSE32 = getRMSE(true_trajectory, estimated_trajectory)
+    print(RMSE32)
+
+
 
     ekf = RobobeeEKF()
     ekf.updatedtype(8, 8)
@@ -355,6 +351,7 @@ if __name__ == '__main__':
     estimated_trajectory = getEstimatedTrajectory(ekf, data)
     true_trajectory, time = getGroundTruth(data)
     RMSE16 = getRMSE(true_trajectory, estimated_trajectory)
+    print(RMSE16)
 
     ekf = RobobeeEKF()
     ekf.updatedtype(4, 4)
@@ -363,9 +360,5 @@ if __name__ == '__main__':
     true_trajectory, time = getGroundTruth(data)
     RMSE8 = getRMSE(true_trajectory, estimated_trajectory)
 
-
-    print(RMSE64)
-    print(RMSE32)
-    print(RMSE16)
     print(RMSE8)
 
